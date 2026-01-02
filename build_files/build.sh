@@ -19,7 +19,7 @@ EOF
 tee /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:bazzite-org:bazzite-multilib.repo <<EOF
 [copr:copr.fedorainfracloud.org:bazzite-org:bazzite-multilib]
 name=Copr repo for bazzite-multilib owned by bazzite-org
-baseurl=https://download.copr.fedorainfracloud.org/results/bazzite-org/bazzite-multilib/fedora-$releasever-$basearch/
+baseurl=https://download.copr.fedorainfracloud.org/results/bazzite-org/bazzite-multilib/fedora-\$releasever-\$basearch/
 type=rpm-md
 skip_if_unavailable=True
 gpgcheck=1
