@@ -26,7 +26,7 @@ fi
 
 ### Install dnf-plugins-core for required commands
 
-dnf5 install dnf-plugins-core
+dnf5 install -y dnf-plugins-core
 
 ### Remove unwanted packages
 
