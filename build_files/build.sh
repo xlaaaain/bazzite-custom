@@ -15,14 +15,19 @@ gpgkey=https://pkgs.netbird.io/yum/repodata/repomd.xml.key
 repo_gpgcheck=1
 EOF
 
-# Enable bazzite-multilib copr repo
-bazzite_multilib_repo="/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:bazzite-org:bazzite-multilib.repo"
-if (! grep -q "enabled=0" "$bazzite_multilib_repo"); then
-  echo "bazzite-multilib copr already enabled."
-else
-  echo "Enabling bazzite-multilib copr"
-  sed -i 's@enabled=0@enabled=1@g' "$bazzite_multilib_repo"
-fi
+# Add bazzite-multilib copr
+tee /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:bazzite-org:bazzite-multilib.repo <<EOF
+[copr:copr.fedorainfracloud.org:bazzite-org:bazzite-multilib]
+name=Copr repo for bazzite-multilib owned by bazzite-org
+baseurl=https://download.copr.fedorainfracloud.org/results/bazzite-org/bazzite-multilib/fedora-$releasever-$basearch/
+type=rpm-md
+skip_if_unavailable=True
+gpgcheck=1
+gpgkey=https://download.copr.fedorainfracloud.org/results/bazzite-org/bazzite-multilib/pubkey.gpg
+repo_gpgcheck=0
+enabled=1
+enabled_metadata=1
+EOF
 
 # Enable Terra repository, credit to ublue for this code
 terra_repo="/etc/yum.repos.d/terra.repo"
