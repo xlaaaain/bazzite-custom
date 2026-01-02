@@ -24,6 +24,10 @@ else
   sed -i 's@enabled=0@enabled=1@g' "$terra_repo"
 fi
 
+### Install dnf-plugins-core for required commands
+
+dnf5 install dnf-plugins-core
+
 ### Remove unwanted packages
 
 dnf5 remove -y krunner-bazaar \
