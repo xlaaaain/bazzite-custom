@@ -15,20 +15,6 @@ gpgkey=https://pkgs.netbird.io/yum/repodata/repomd.xml.key
 repo_gpgcheck=1
 EOF
 
-# Add bazzite-multilib copr
-tee /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:bazzite-org:bazzite-multilib.repo <<EOF
-[copr:copr.fedorainfracloud.org:bazzite-org:bazzite-multilib]
-name=Copr repo for bazzite-multilib owned by bazzite-org
-baseurl=https://download.copr.fedorainfracloud.org/results/bazzite-org/bazzite-multilib/fedora-\$releasever-\$basearch/
-type=rpm-md
-skip_if_unavailable=True
-gpgcheck=1
-gpgkey=https://download.copr.fedorainfracloud.org/results/bazzite-org/bazzite-multilib/pubkey.gpg
-repo_gpgcheck=0
-enabled=1
-enabled_metadata=1
-EOF
-
 # Enable Terra repository, credit to ublue for this code
 terra_repo="/etc/yum.repos.d/terra.repo"
 if (! grep -q "enabled=0" "$terra_repo"); then
@@ -71,7 +57,7 @@ dnf5 install -y podman-compose \
   htop
 
 # install from bazzite-multilib copr
-dnf5 -y install --repo="copr:copr.fedorainfracloud.org:bazzite-org:bazzite-multilib" \
+dnf5 -y install --repo="copr:copr.fedorainfracloud.org:ublue-os:bazzite-multilib" \
   pipewire-config-raop
 
 # using rpm-ostree over dnf here as dnf had issues properly installing
