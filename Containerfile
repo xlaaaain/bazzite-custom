@@ -2,8 +2,6 @@
 FROM scratch AS ctx
 COPY build_files /
 
-RUN chmod +x /build.sh
-
 # Base Image
 FROM ghcr.io/ublue-os/bazzite-nvidia-open:stable
 
