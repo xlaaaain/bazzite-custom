@@ -64,6 +64,9 @@ dnf5 install -y podman-compose \
   kdepim-addons \
   kontact
 
+# remove akonadi-notes and knotes if accidentally installed
+dnf5 remove akonadi-notes knotes
+
 # install from bazzite-multilib copr
 dnf5 -y install --repo="copr:copr.fedorainfracloud.org:ublue-os:bazzite-multilib" \
   pipewire-config-raop
