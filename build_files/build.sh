@@ -54,18 +54,7 @@ dnf5 install -y podman-compose \
   vlc-plugins-all \
   konsole \
   neovim \
-  htop \
-  kmail \
-  korganizer \
-  kalarm \
-  kaddressbook \
-  kde-partitionmanager \
-  kdepim-runtime \
-  kdepim-addons \
-  kontact
-
-# remove akonadi-notes and knotes if accidentally installed
-dnf5 remove akonadi-notes knotes
+  htop
 
 # install from bazzite-multilib copr
 dnf5 -y install --repo="copr:copr.fedorainfracloud.org:ublue-os:bazzite-multilib" \
