@@ -54,7 +54,8 @@ dnf5 install -y podman-compose \
   vlc-plugins-all \
   konsole \
   neovim \
-  htop
+  htop \
+  kde-partitionmanager
 
 # install from bazzite-multilib copr
 dnf5 -y install --repo="copr:copr.fedorainfracloud.org:ublue-os:bazzite-multilib" \
