@@ -58,8 +58,8 @@ dnf5 install -y podman-compose \
   kde-partitionmanager
 
 # install from bazzite-multilib copr
-dnf5 -y install --repo="copr:copr.fedorainfracloud.org:ublue-os:bazzite-multilib" \
-  pipewire-config-raop
+# dnf5 -y install --repo="copr:copr.fedorainfracloud.org:ublue-os:bazzite-multilib" \
+#  pipewire-config-raop
 
 # using rpm-ostree over dnf here as dnf had issues properly installing
 # these packages.
