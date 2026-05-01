@@ -55,7 +55,10 @@ dnf5 install -y podman-compose \
   konsole \
   neovim \
   htop \
-  kde-partitionmanager
+  kde-partitionmanager \
+  qemu \
+  libvirt \
+  guestfs-tools
 
 # install from bazzite-multilib copr
 # dnf5 -y install --repo="copr:copr.fedorainfracloud.org:ublue-os:bazzite-multilib" \
