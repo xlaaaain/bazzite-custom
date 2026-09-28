@@ -32,7 +32,8 @@ dnf5 install -y dnf-plugins-core
 
 dnf5 remove -y krunner-bazaar \
   bazaar \
-  ptyxis
+  ptyxis \
+  msedit
 
 ### Install packages
 
