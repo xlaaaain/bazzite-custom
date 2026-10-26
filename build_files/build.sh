@@ -10,7 +10,7 @@ tee /etc/yum.repos.d/netbird.repo <<EOF
 name=netbird
 baseurl=https://pkgs.netbird.io/yum/
 enabled=1
-gpgcheck=0
+gpgcheck=1
 gpgkey=https://pkgs.netbird.io/yum/repodata/repomd.xml.key
 repo_gpgcheck=1
 EOF
@@ -67,7 +67,7 @@ dnf5 install -y podman-compose \
 
 # using rpm-ostree over dnf here as dnf had issues properly installing
 # these packages.
-rpm-ostree install -y netbird netbird-ui coolercontrol liquidctl
+rpm-ostree install -y netbird
 
 ### Enable services
 
@@ -76,6 +76,3 @@ systemctl enable podman.socket
 
 # enable netbird system service
 systemctl enable netbird
-
-# enable coolercontrold
-systemctl enable coolercontrold
