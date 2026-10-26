@@ -76,6 +76,8 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6
+        with:
+          persist-credentials: false
 
       - name: Build disk images
         id: build
@@ -113,4 +115,3 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y rclone
           rclone copy $SOURCE_DIR S3:${{ secrets.S3_BUCKET_NAME }}
-
